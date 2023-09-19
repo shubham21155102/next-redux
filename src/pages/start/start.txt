@@ -1,0 +1,221 @@
+import React, { useState } from 'react';
+import "./styles/start.module.css"
+const Starting = () => {
+    // Define state variables for form fields with initial values
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [streetAdress, setStreetAdress] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [pinCode, setPinCode] = useState('');
+    const [country, setCountry] = useState('');
+    const [gender, setGender] = useState('');
+    const [hobbies, setHobbies] = useState(['']);
+
+    // Function to handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent the default form submission behavior
+        // You can add your form data handling logic here
+        alert(`Submitted Data:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}`);
+        // Replace the alert with your desired logic, such as sending data to a server
+    }
+
+    return (
+        <div style={{ backgroundColor: "white", borderWidth: "7px", borderColor: "red", color: "black" }}>
+            <h1 className="page-title"
+                style={{ fontSize: "24px", marginBottom: "20px" }}
+            >Form</h1>
+
+            <section>
+                <div className="container"
+                    style={{ maxWidth: "600px", margin: "0 auto", padding: "2-px", borderWidth: "3px", borderColor: "black", borderRadius: "10px" }}
+                >
+
+                    <form onSubmit={handleSubmit} className="needs-validation">
+
+                        <div className="form-group"
+                            style={{ marginBlock: "20px" }}
+                        >
+                            <input type="hidden" name="UUID" placeholder="User Id" className="form-control" required="" />
+                        </div>
+                        <div className="form-group" style={{ marginBlock: "20px" }}>
+                            <input type="hidden" name="createdAt" placeholder="Created At" className="form-control" required="" />
+                        </div>
+
+
+                        <center>
+
+
+                            <div className="form-group" 
+                            style={
+                                { marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left", }}
+                            >
+                                <input
+                                    type="name"
+                                    name="name"
+                                    placeholder="Name"
+                                    className="form-control"
+                                    required=""
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
+                        </center>
+
+                        {/* Email input field */}
+                        <center>
+
+
+                            <div className="form-group" style={{ marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left" }}>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    className="form-control"
+                                    required=""
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                        </center>
+
+                        {/* Phone input field */}
+                        <center>
+                            <div className="form-group" style={{ marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left" }}>
+
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Phone"
+                                    className="form-control"
+                                    required=""
+                                    pattern="^[0-9]{10}$"
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                />
+                            </div>
+                        </center>
+
+                        {/* Address input field */}
+                        <center>
+                            <div className="form-group" style={{ marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left" }}>
+
+                                <textarea
+                                    name="address"
+                                    placeholder="Address"
+                                    className="form-control"
+                                    required=""
+                                    value={address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                ></textarea>
+                            </div>
+
+                        </center>
+
+
+                        {/*Street adress field */}
+                        <center>
+                            <div className="form-group" style={{ marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left" }}>
+
+                                <input
+                                    type="text"
+                                    name="streetAdress"
+                                    placeholder="Street Adress"
+                                    className="form-control"
+                                    required=""
+                                    value={streetAdress}
+                                    onChange={(e) => setStreetAdress(e.target.value)}
+                                />
+                            </div>
+                        </center>
+                        {/*City  Field*/}
+                        <center>
+                            <div className="form-group" style={{ marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left" }}>
+
+                                <input
+                                    type="text"
+                                    name="city"
+                                    placeholder="City"
+                                    className="form-control"
+                                    required=""
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                />
+                            </div>
+                        </center>
+                        {/*State Field*/}
+                        <center>
+                            <div className="form-group" style={{ marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left" }}>
+
+                                <input
+                                    type="text"
+                                    name="state"
+                                    placeholder="State"
+                                    className="form-control"
+                                    required=""
+                                    value={state}
+                                    onChange={(e) => setState(e.target.value)}
+                                />
+                            </div>
+                        </center>
+                        {/*Pin Code Field*/}
+                        <center>
+                            <div className="form-group" style={{ marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left" }}>
+
+                                <input
+                                    type="text"
+                                    name="pinCode"
+                                    placeholder="Pin Code"
+                                    className="form-control"
+                                    required=""
+                                    value={pinCode}
+                                    onChange={(e) => setPinCode(e.target.value)}
+                                />
+                            </div>
+                        </center>
+                        {/*Country Field*/}
+                        <center>
+                            <div className="form-group" style={{ marginBlock: "20px", width: "80%", padding: "10px", border: "1px solid #ccc", borderRadius: "4px", textAlign: "left" }}>
+
+                                <input
+                                    type="text"
+                                    name="country"
+                                    placeholder="Country"
+                                    className="form-control"
+                                    required=""
+                                    value={country}
+                                    onChange={(e) => setCountry(e.target.value)}
+                                />
+                            </div>
+                        </center>
+
+                        <center>
+
+                        <div className="form-group" style={{width:"80%",padding:'10px',backgroundColor:"#007BFF",color:"white",border:"none",borderRadius:"4px",cursor:"pointer"}}>
+                            <input type="submit" value="Submit" className="submit-button" required="" />
+                        </div>
+                        <br/>
+                        <div className="form-group" style={{width:"80%",padding:'10px',backgroundColor:"#007BFF",color:"white",border:"none",borderRadius:"4px",cursor:"pointer"}}>
+                            <input type="reset" value="Reset" className="reset-button" required="" />
+                        </div>
+                        </center>
+
+                    </form>
+                    {/* End of the form */}
+                </div>
+            </section>
+
+            <h2 className="totalCount">Total Items <span className="total">0</span></h2>
+
+            <section className="tableSection">
+                <div id="tableDiv">
+                    <table className="table table-bordered table-striped"></table>
+                </div>
+            </section>
+        </div>
+    );
+}
+
+export default Starting;
